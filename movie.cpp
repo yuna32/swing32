@@ -1,20 +1,20 @@
 #include<iostream>
 using namespace std;
 
-int adult;
-int teen;
-int x;
-int y;
+int adult; //ì„±ì¸ 
+int teen; //ì²­ì†Œë…„
+int x; //ê°€ë¡œ í–‰
+int y; //ì„¸ë¡œ ì—´
 
 int main(void) {
 	int a;
 
-	cout << "**¿µÈ­ ¿¹¾à ½Ã½ºÅÛ**" << endl;
+	cout << "**ì˜í™” ì˜ˆì•½ ì‹œìŠ¤í…œ**" << endl;
 	cout << endl;
-	cout << "1. ÁÂ¼® ¿¹¾à" << endl;
-	cout << "2. ¿¹¾à º¯°æ" << endl;
-	cout << "3. ÇÁ·Î±×·¥ Á¾·á" << endl;
-	cout << "¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä :";
+	cout << "1. ì¢Œì„ ì˜ˆì•½" << endl;
+	cout << "2. ì˜ˆì•½ ë³€ê²½" << endl;
+	cout << "3. í”„ë¡œê·¸ë¨ ì¢…ë£Œ" << endl;
+	cout << "ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš” :";
 	cin >> a;
 
 	if (a == 1) {
@@ -38,14 +38,14 @@ int main(void) {
 			}
 			cout << endl;
 		}
-		cout << endl << "¼ºÀÎ (14000¿ø) : ";
+		cout << endl << "ì„±ì¸ (14000ì›) : ";
 		cin >> adult;
 
-		cout << endl << "Ã»¼Ò³â (11000¿ø) : ";
+		cout << endl << "ì²­ì†Œë…„ (11000ì›) : ";
 		cin >> teen;
 
 		for (int i = 0; i < adult + teen; ++i) {
-			cout << endl << "¸î ¿­, ¸î ¹øÂ° ÁÂ¼®À» ¿¹¾àÇÏ½Ã°Ú½À´Ï±î? " << endl;
+			cout << endl << "ëª‡ ì—´, ëª‡ ë²ˆì§¸ ì¢Œì„ì„ ì˜ˆì•½í•˜ì‹œê² ìŠµë‹ˆê¹Œ? " << endl;
 
 			cin >> x >> y;
 
@@ -54,11 +54,11 @@ int main(void) {
 			{
 				if (arr[x] == 0, arr[y] == 0);
 				{
-					cout << "¿¹¾àµÇ¾ú½À´Ï´Ù. " << endl;
+					cout << "ì˜ˆì•½ë˜ì—ˆìŠµë‹ˆë‹¤. " << endl;
 					arr[x], [y] = 1;
 				}
 				else {
-					cout << "ÀÌ¹Ì ¿¹¾àµÇ¾ú½À´Ï´Ù. ´Ù¸¥ ÀÚ¸®¸¦ ¼±ÅÃÇÏ¼¼¿ä. " << endl;
+					cout << "ì´ë¯¸ ì˜ˆì•½ë˜ì—ˆìŠµë‹ˆë‹¤. ë‹¤ë¥¸ ìë¦¬ë¥¼ ì„ íƒí•˜ì„¸ìš”. " << endl;
 				}
 			}
 
@@ -70,7 +70,7 @@ int main(void) {
 
 	else if (a == 2)
 	{
-		cout << "º¯°æ ÁÂ¼® (n¿­, m¹øÂ°): ";
+		cout << "ë³€ê²½ ì¢Œì„ (nì—´, më²ˆì§¸): ";
 		cin >> x >> y;
 
 
@@ -78,15 +78,15 @@ int main(void) {
 
 	else if (a == 3)
 	{
-		int total;
+		int total; //ê°€ê²© í•©ê³„
 		total = (14000 * adult) + (11000 * teen);
 
-		cout << "ÃÑ" << total << "¿ø ÀÔ´Ï´Ù.";
+		cout << "ì´" << total << "ì› ì…ë‹ˆë‹¤.";
 		return 0;
 	}
 
 	else {
-		cout << "¿Ã¹Ù¸¥ ¼ıÀÚ¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä" << endl << endl;
+		cout << "ì˜¬ë°”ë¥¸ ìˆ«ìë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”" << endl << endl;
 	}
 		
 return 0;
