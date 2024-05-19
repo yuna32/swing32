@@ -16,7 +16,7 @@ public:
 
     void print() const {
         cout << "이름: " << name << endl;
-        cout<< "전화번호: " << phone << std::endl;
+        cout << "전화번호: " << phone << std::endl;
     }
 
     bool check(const string& username, const string& userphone) const {
@@ -26,10 +26,6 @@ public:
         else {
             return false;
         }
-    }
-    void modify(const string& new_name, const string& new_phone) {
-        name = new_name;
-        phone = new_phone;
     }
 };
 
@@ -71,7 +67,7 @@ int main() {
                 cout << "이미 등록된 정보입니다." << endl;
                 cout << endl;
             }
-            
+
             else {
                 Information info;
                 info.set(name, phone);
@@ -96,9 +92,11 @@ int main() {
                     cout << "로그인이 완료되었습니다." << endl;
                     cout << endl;
                     cout << "*** SWING" << name << "님을 응원합니다. ***" << endl;
-                    return 0;
+                    cout << endl;
+                    continue;
                 }
                 else {
+                    cout << endl;
                     cout << "회원 정보가 일치하지 않습니다." << endl;
                     cout << endl;
                 }
@@ -117,38 +115,38 @@ int main() {
             cin >> phone;
             cout << endl;
 
-                bool alreadyRegistered = false;
-                for (auto& info : infolist) {
-                    if (info.check(name, phone)) {
+            bool alreadyRegistered = false;
+            for (auto it = infolist.begin(); it != infolist.end(); ++it) {
+                if (it->check(name, phone)) {
                     alreadyRegistered = true;
-                        string new_name, new_phone;
-                        cout << "이름: ";
-                        cin >> new_name;
-                        cout << endl;
-                        cout << "전화번호: ";
-                        cin >> new_phone;
-                        cout << endl;
-                        info.modify(new_name, new_phone);
-                        
-                        Information info;
-                        info.set(name, phone);
-                        infolist.push_back(info);
-                    }
-                        break;
+                    string new_name, new_phone;
+                    cout << "이름: ";
+                    cin >> new_name;
+                    cout << endl;
+                    cout << "전화번호: ";
+                    cin >> new_phone;
+                    it = infolist.erase(it);
+                    cout << endl;
+
+                    Information info;
+                    info.set(new_name, new_phone);
+                    infolist.insert(it, info);
                 }
-                if (!alreadyRegistered) {
+                break;
+            }
+            if (!alreadyRegistered) {
                 cout << endl;
                 cout << "회원 정보가 일치하지 않습니다." << endl;
                 cout << endl;
-                }
+            }
         }
 
         else if (number == 4) {
             cout << endl;
             cout << "SWING 회원 정보 관리 프로그램을 종료합니다." << endl;
             break;
-            }
-        
+        }
+
         else if (number != 1 && number != 2 && number != 3 && number != 4) {
             cout << endl;
             cout << "정확한 번호를 입력해주세요." << endl;
@@ -156,5 +154,5 @@ int main() {
         }
     }
 
-return 0;
+    return 0;
 }
