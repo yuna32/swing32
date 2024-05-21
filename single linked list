@@ -50,7 +50,7 @@ template <typename T>
 void singleLinkedList<T>::show() {
     Node<T>* current = head;
     while (current != nullptr) {
-        std::cout << current->data;
+        cout << current->data;
         if (current->next != nullptr) {
             cout << " -> ";
         }
